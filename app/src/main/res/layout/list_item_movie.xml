@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/size280"
+       android:layout_marginBottom="@dimen/size14"
+       android:elevation="@dimen/size5"
+       >
+       <androidx.cardview.widget.CardView
+           android:id="@+id/cvMain"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:cardCornerRadius="@dimen/size15"
+           android:layout_margin="@dimen/size5"
+           >
+
+           <ImageView
+               android:id="@+id/ivBackground"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/dummy_image"
+               android:contentDescription="@string/icon_point"
+               android:scaleType="fitXY" />
+
+           <androidx.appcompat.widget.LinearLayoutCompat
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/size130"
+               android:layout_gravity="bottom"
+               android:background="@drawable/item_gradient_black_transparent"
+               android:orientation="vertical"
+               android:padding="@dimen/size16">
+
+               <androidx.appcompat.widget.LinearLayoutCompat
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:id="@+id/tvReleaseDate"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:drawablePadding="@dimen/size5"
+                       tools:text="@string/dummyReleaseDate"
+                       android:textColor="@color/blue_white_300"
+                       android:textSize="@dimen/text14"
+                    />
+
+                   <TextView
+                       android:id="@+id/tvRating"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="@dimen/size16"
+                       android:drawablePadding="@dimen/size5"
+                       android:textAlignment="center"
+                       tools:text="@string/rating"
+                       android:textColor="@color/blue_white_300"
+                       android:textSize="@dimen/text14"
+                       app:drawableStartCompat="@drawable/ic_baseline_star_24" />
+
+               </androidx.appcompat.widget.LinearLayoutCompat>
+
+               <TextView
+                   android:id="@+id/tvMovieName"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   tools:text="@string/title_movie"
+                   android:layout_marginTop="@dimen/size10"
+                   android:textSize="@dimen/text18"
+                   style="@style/TextTitle"/>
+
+               <androidx.appcompat.widget.LinearLayoutCompat
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/size10"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:id="@+id/tvGenre"
+                       android:visibility="gone"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       tools:text="@string/genre_movie"
+                       android:textColor="@color/blue_sky_bright"
+                       android:textSize="@dimen/text12"
+                       android:fontFamily="@font/nunito_sans_bold"
+                       android:textStyle="bold" />
+               </androidx.appcompat.widget.LinearLayoutCompat>
+           </androidx.appcompat.widget.LinearLayoutCompat>
+       </androidx.cardview.widget.CardView>
+   </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

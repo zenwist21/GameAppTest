@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">GamesApp</string>
+    <string name="movie_app">Movie App</string>
+    <string name="title_activity_main_menu_movie">MainMenuMovieActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_tv_show">Tv Show</string>
+    <string name="title_movie">Movie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all">All</string>
+    <string name="choose_genre">Choose movie genre</string>
+    <string name="icon_point">icon point</string>
+    <string name="rating">Rating : 4.0</string>
+    <string name="dummyReleaseDate">Release date : 18 Aug 2019</string>
+    <string name="list_movie">List Movie</string>
+    <string name="genre_movie">Genre : Action , Superhero</string>
+    <string name="no_data_exist">No data exist</string>
+    <string name="try_again">Try again</string>
+    <string name="ratingWValue">Rating : %1$s</string>
+    <string name="releaseDateWVal">Release date : %1$s</string>
+    <string name="please_wait">Please wait …</string>
+    <string name="choose_tv_genre">Choose tv genre</string>
+    <string name="list_tv_show">List tv show</string>
+    <string name="title_detail">Detail Movie</string>
+    <string name="Trailer">Trailer</string>
+    <string name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="title_description">Overview : </string>
+    <string name="see_review">See reviews</string>
+    <string name="review">Review</string>
+    <string name="reviews">Reviews</string>
+    <string name="authorName">%1$s . %2$s</string>
+    <string name="video_not_found">Video not found</string>
+    <string name="no_video">No trailer found</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.lawencontest.core.base
+package com.test.gamesapp.core.base
 
 import android.view.View
 import androidx.annotation.LayoutRes
@@ -39,7 +39,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     abstract fun initListener()
     abstract fun initController()
-    abstract fun observer()
-    abstract fun setupAdapter()
+    abstract fun observe()
 
 }

@@ -2,22 +2,32 @@ package com.test.gamesapp.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.NetworkInfo
+import android.net.NetworkCapabilities
+import android.os.Build
 import javax.inject.Inject
 
 class Network @Inject constructor(private val context: Context) : NetworkConnectivity {
-    override fun getNetworkInfo(): NetworkInfo? {
-        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        return cm.activeNetworkInfo
-    }
 
     override fun isConnected(): Boolean {
-        val info = getNetworkInfo()
-        return info != null && info.isConnected
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val nw = connectivityManager.activeNetwork ?: return false
+            val actNw = connectivityManager.getNetworkCapabilities(nw) ?: return false
+            return when {
+                actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                //for other device how are able to connect with Ethernet
+                actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                //for check internet over Bluetooth
+                actNw.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH) -> true
+                else -> false
+            }
+        } else {
+            return connectivityManager.activeNetworkInfo?.isConnected ?: false
+        }
     }
 }
 
 interface NetworkConnectivity {
-    fun getNetworkInfo(): NetworkInfo?
     fun isConnected(): Boolean
 }

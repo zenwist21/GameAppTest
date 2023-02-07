@@ -16,7 +16,6 @@ sealed class Resource<T>(
             is Success<*> -> "Success[data=$data]"
             is DataError -> "Error[exception=$errorMessage"
             is Loading<T> -> "Loading"
-
         }
     }
 }

@@ -7,11 +7,12 @@ plugins {
 }
 
 android {
-    namespace 'com.example.lawencontest'
+    namespace 'com.test.gamesapp'
     compileSdk 33
     def configPropertiesFile = rootProject.file("config.properties")
     def configProperties = new Properties()
     configProperties.load(new FileInputStream(configPropertiesFile))
+
     defaultConfig {
         applicationId "com.test.gamesapp"
         minSdk 21

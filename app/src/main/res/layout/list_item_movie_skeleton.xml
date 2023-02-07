@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerFrame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size280"
+        android:layout_marginBottom="@dimen/size14"
+        android:elevation="@dimen/size5"
+        app:duration="800"
+        >
+       <androidx.cardview.widget.CardView
+           android:id="@+id/cvMain"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:cardCornerRadius="@dimen/size15"
+           android:layout_margin="@dimen/size5"
+           android:backgroundTint="@color/colorSoftGrey"
+           >
+       </androidx.cardview.widget.CardView>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</layout>
