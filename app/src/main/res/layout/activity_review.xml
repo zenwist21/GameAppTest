@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.test.gamesapp.feature_movie.presentation.reviews.ReviewViewModel" />
+            type="com.test.movieApp.feature_movie.presentation.reviews.ReviewViewModel" />
     </data>
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

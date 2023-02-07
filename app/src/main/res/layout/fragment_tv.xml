@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.test.gamesapp.feature_movie.presentation.main.ui.tv.TVViewModel" />
+            type="com.test.movieApp.feature_movie.presentation.main.ui.tv.TVViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

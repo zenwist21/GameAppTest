@@ -7,7 +7,7 @@
     <data>
         <variable
             name="vm"
-            type="com.test.gamesapp.feature_movie.presentation.main.ui.movie.MovieViewModel" />
+            type="com.test.movieApp.feature_movie.presentation.main.ui.movie.MovieViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

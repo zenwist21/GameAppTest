@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".core.base.BaseApp"
+        android:name="com.test.movieApp.core.base.BaseApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -18,21 +18,21 @@
         android:theme="@style/Theme.GamesApp.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".feature_movie.presentation.reviews.ReviewActivity"
+            android:name="com.test.movieApp.feature_movie.presentation.reviews.ReviewActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".feature_movie.presentation.detail.DetailMovieActivity"
+            android:name="com.test.movieApp.feature_movie.presentation.detail.DetailMovieActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".feature_movie.presentation.main.MainMenuMovieActivity"
+            android:name="com.test.movieApp.feature_movie.presentation.main.MainMenuMovieActivity"
             android:exported="false"
             android:label="@string/title_activity_main_menu_movie">
             <meta-data
@@ -40,7 +40,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".feature_movie.presentation.splash.Splash"
+            android:name="com.test.movieApp.feature_movie.presentation.splash.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
