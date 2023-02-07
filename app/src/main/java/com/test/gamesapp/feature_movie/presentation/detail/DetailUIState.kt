@@ -1,8 +1,8 @@
 package com.test.gamesapp.feature_movie.presentation.detail
 
 import com.test.gamesapp.feature_movie.util.DetailType
-import com.test.gamesapp.feature_movie.data.model.TmDbModel
-import com.test.gamesapp.feature_movie.data.model.VideoModel
+import com.test.gamesapp.core.data.model.TmDbModel
+import com.test.gamesapp.core.data.model.VideoModel
 
 data class DetailUIState(
     val initialLoading: Boolean = false,

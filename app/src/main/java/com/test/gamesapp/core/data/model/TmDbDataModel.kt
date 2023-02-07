@@ -1,4 +1,4 @@
-package com.test.gamesapp.feature_movie.data.model
+package com.test.gamesapp.core.data.model
 
 import android.os.Parcelable
 import com.test.gamesapp.core.data.remote.response.*
@@ -42,7 +42,7 @@ data class TmDbModel(
                 form.adult,
                 form.backdrop_path,
                 form.budget,
-                GenreModel.Mapper.fromResponse(form.genres as MutableList<GenreResponse>),
+                GenreModel.Mapper.fromResponse(form = form.genres ?: emptyList()),
                 form.homepage,
                 form.id,
                 form.imdb_id,
@@ -52,12 +52,12 @@ data class TmDbModel(
                 form.overview,
                 form.popularity,
                 form.poster_path,
-                ProductionCompanyModel.Mapper.fromResponse(form.production_companies as MutableList<ProductionCompanyResponse>),
-                ProductionCountryModel.Mapper.fromResponse(form.production_countries as MutableList<ProductionCountryResponse>),
+                ProductionCompanyModel.Mapper.fromResponse(form.production_companies ?: emptyList()),
+                ProductionCountryModel.Mapper.fromResponse(form.production_countries ?: emptyList()),
                 form.release_date,
                 form.revenue,
                 form.runtime,
-                SpokenLanguageModel.Mapper.fromResponse(form.spoken_languages as MutableList<SpokenLanguageResponse>),
+                SpokenLanguageModel.Mapper.fromResponse(form.spoken_languages  ?: emptyList()),
                 form.status,
                 form.tagline,
                 form.title,
@@ -96,7 +96,7 @@ data class ProductionCompanyModel(
     val origin_country: String? = null
 ) : Parcelable {
     object Mapper {
-        fun from(form: ProductionCompanyResponse) =
+        private fun from(form: ProductionCompanyResponse) =
             ProductionCompanyModel(
                 form.id,
                 form.logo_path,
@@ -104,7 +104,7 @@ data class ProductionCompanyModel(
                 form.origin_country,
             )
 
-        fun fromResponse(form: MutableList<ProductionCompanyResponse>): MutableList<ProductionCompanyModel> {
+        fun fromResponse(form: List<ProductionCompanyResponse>): MutableList<ProductionCompanyModel> {
             val data = mutableListOf<ProductionCompanyModel>()
             if (form.isNotEmpty()) {
                 form.forEach { dForm ->
@@ -122,13 +122,13 @@ data class ProductionCountryModel(
     val name: String? = null
 ) : Parcelable {
     object Mapper {
-        fun from(form: ProductionCountryResponse) =
+        private fun from(form: ProductionCountryResponse) =
             ProductionCountryModel(
                 form.iso_3166_1,
                 form.name,
             )
 
-        fun fromResponse(form: MutableList<ProductionCountryResponse>): MutableList<ProductionCountryModel> {
+        fun fromResponse(form: List<ProductionCountryResponse>): MutableList<ProductionCountryModel> {
             val data = mutableListOf<ProductionCountryModel>()
             if (form.isNotEmpty()) {
                 form.forEach { dForm ->
@@ -149,7 +149,7 @@ data class GenreModel(
     var isSelected: Boolean = false,
 ) : Parcelable {
     object Mapper {
-        fun from(form: GenreResponse) =
+        private fun from(form: GenreResponse) =
             GenreModel(
                 form.id,
                 form.name,
@@ -157,7 +157,7 @@ data class GenreModel(
                 form.isSelected,
             )
 
-        fun fromResponse(form: MutableList<GenreResponse>): MutableList<GenreModel> {
+        fun fromResponse(form: List<GenreResponse>): MutableList<GenreModel> {
             val data = mutableListOf<GenreModel>()
             if (form.isNotEmpty()) {
                 form.forEach { dForm ->
@@ -183,7 +183,7 @@ data class VideoModel(
     val type: String? = null
 ) : Parcelable {
     object Mapper {
-        fun from(form: VideoResponse) =
+        private fun from(form: VideoResponse) =
             VideoModel(
                 form.id,
                 form.iso_3166_1,
@@ -224,7 +224,7 @@ data class ReviewDataModel(
     val url: String? = null
 ) : Parcelable {
     object Mapper {
-        fun from(form: ReviewResponse) =
+        private fun from(form: ReviewResponse) =
             ReviewDataModel(
                 form.author,
                 AuthorDetailModel.Mapper.from(form.author_details ?: AuthorDetailsResponse()),
@@ -258,14 +258,14 @@ data class SpokenLanguageModel(
     val name: String? = null
 ) : Parcelable {
     object Mapper {
-        fun from(form: SpokenLanguageResponse) =
+        private fun from(form: SpokenLanguageResponse) =
             SpokenLanguageModel(
                 form.english_name,
                 form.iso_639_1,
                 form.name,
             )
 
-        fun fromResponse(form: MutableList<SpokenLanguageResponse>): MutableList<SpokenLanguageModel> {
+        fun fromResponse(form: List<SpokenLanguageResponse>): MutableList<SpokenLanguageModel> {
             val data = mutableListOf<SpokenLanguageModel>()
             if (form.isNotEmpty()) {
                 form.forEach { dForm ->

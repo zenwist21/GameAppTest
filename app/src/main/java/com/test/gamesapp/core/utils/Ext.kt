@@ -1,5 +1,6 @@
-package com.test.gamesapp.utils
+package com.test.gamesapp.core.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import android.widget.ImageView
@@ -13,6 +14,10 @@ import com.test.gamesapp.R
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
+import org.json.JSONObject
+import java.text.SimpleDateFormat
+import java.util.*
 
 fun View.showView() {
     visibility = View.VISIBLE
@@ -22,8 +27,27 @@ fun View.hideView() {
     visibility = View.GONE
 }
 
+fun convertErrorMessage(errorBody: ResponseBody?, getFrom: String = "status_message"): String {
+    return JSONObject(errorBody!!.charStream().readText()).getString(getFrom)
+}
 
-fun ImageView.loadImage(context: Context, url: String){
+@SuppressLint("SimpleDateFormat")
+fun convertDateFormat(
+    current: String,
+    oldFormat: String, newFormat: String
+): String {
+    return try {
+        var dateFormat = SimpleDateFormat(oldFormat)
+        val newDate = dateFormat.parse(current)
+        dateFormat = SimpleDateFormat(newFormat)
+        dateFormat.format(newDate ?: Date())
+    } catch (e: Exception) {
+        ""
+    }
+
+}
+
+fun ImageView.loadImage(context: Context, url: String) {
     Glide.with(context)
         .load(url)
         .placeholder(R.drawable.ic_dummy_background)

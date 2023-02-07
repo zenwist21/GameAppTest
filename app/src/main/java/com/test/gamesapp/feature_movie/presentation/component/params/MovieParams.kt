@@ -1,4 +1,4 @@
-package com.example.lawencontest.feature.feature_movie.repo
+package com.test.gamesapp.feature_movie.presentation.component.params
 
 object MovieParams {
     fun getMovieParams(

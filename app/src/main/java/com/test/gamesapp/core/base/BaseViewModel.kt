@@ -2,7 +2,7 @@ package com.test.gamesapp.core.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.test.gamesapp.utils.Constant
+import com.test.gamesapp.core.utils.Constant
 
 open class BaseViewModel : ViewModel() {
     var currentLayout = MutableLiveData<String>()

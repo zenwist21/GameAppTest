@@ -1,6 +1,6 @@
-package com.test.gamesapp.feature_movie.di
+package com.test.gamesapp.core.di
 
-import com.test.gamesapp.core.data.repository.MovieRepository
+import com.test.gamesapp.core.domain.repository.MovieRepository
 import com.test.gamesapp.core.data.repository.MovieRepositoryImpl
 import dagger.Binds
 import dagger.Module

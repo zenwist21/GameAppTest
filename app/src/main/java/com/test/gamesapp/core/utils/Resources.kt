@@ -1,4 +1,4 @@
-package com.test.gamesapp.utils
+package com.test.gamesapp.core.utils
 
 sealed class Resource<T>(
     val data: T? = null,

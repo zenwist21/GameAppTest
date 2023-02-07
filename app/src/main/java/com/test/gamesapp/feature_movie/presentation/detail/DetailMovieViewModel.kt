@@ -1,10 +1,17 @@
 package com.test.gamesapp.feature_movie.presentation.detail
 
-import com.test.gamesapp.core.data.repository.MovieRepository
+import androidx.lifecycle.viewModelScope
+import com.test.gamesapp.core.domain.repository.MovieRepository
 import com.test.gamesapp.core.base.BaseViewModel
+import com.test.gamesapp.core.utils.Constant
+import com.test.gamesapp.core.utils.Resource
+import com.test.gamesapp.core.data.model.VideoModel
 import com.test.gamesapp.feature_movie.util.DetailType
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
@@ -39,42 +46,42 @@ class DetailMovieViewModel @Inject constructor(
     }
 
     private fun getDetailMovie() {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            repo.getDetailMovies(
-//                _state.value.itemId ?: 1
-//            ) .onEach {
-//                when (it) {
-//                    is Resource.DataError -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                initialLoading = false,
-//                                errorResult = it.errorMessage
-//                            )
-//                        }
-//
-//                    }
-//                    is Resource.Loading -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                initialLoading = true,
-//                                errorResult = null
-//                            )
-//                        }
-//                    }
-//                    is Resource.Success -> {
-//                        delay(1000)
-//                        _state.update { data ->
-//                            data.copy(
-//                                initialLoading = false,
-//                                errorResult = null,
-//                                result = it.data
-//                            )
-//                        }
-//
-//                    }
-//                }
-//            }.launchIn(this)
-//            }
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.getDetailMovies(
+                _state.value.itemId ?: 1
+            ) .onEach {
+                when (it) {
+                    is Resource.DataError -> {
+                        _state.update { data ->
+                            data.copy(
+                                initialLoading = false,
+                                errorResult = it.errorMessage
+                            )
+                        }
+
+                    }
+                    is Resource.Loading -> {
+                        _state.update { data ->
+                            data.copy(
+                                initialLoading = true,
+                                errorResult = null
+                            )
+                        }
+                    }
+                    is Resource.Success -> {
+                        delay(1000)
+                        _state.update { data ->
+                            data.copy(
+                                initialLoading = false,
+                                errorResult = null,
+                                result = it.data
+                            )
+                        }
+
+                    }
+                }
+            }.launchIn(this)
+            }
     }
     fun clearLink(){
         _state.update {
@@ -84,118 +91,118 @@ class DetailMovieViewModel @Inject constructor(
         }
     }
      fun getMovieVideos() {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            repo.getMovieVideo(
-//                _state.value.itemId ?: 1
-//            ).onEach {
-//                when (it) {
-//                    is Resource.DataError -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                loadingMovies = false,
-//                                errorVideo = it.errorMessage
-//                            )
-//                        }
-//
-//                    }
-//                    is Resource.Loading -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                loadingMovies = true,
-//                                errorVideo = null
-//                            )
-//                        }
-//                    }
-//                    is Resource.Success -> {
-//                        delay(1000)
-//                        _state.update { data ->
-//                            data.copy(
-//                                loadingMovies = false,
-//                                errorVideo = null,
-//                                resultVideo = it.data?.results as List<VideoModel>
-//                            )
-//                        }
-//
-//                    }
-//                }
-//            }.launchIn(this)
-//        }
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.getMovieVideo(
+                _state.value.itemId ?: 1
+            ).onEach {
+                when (it) {
+                    is Resource.DataError -> {
+                        _state.update { data ->
+                            data.copy(
+                                loadingMovies = false,
+                                errorVideo = it.errorMessage
+                            )
+                        }
+
+                    }
+                    is Resource.Loading -> {
+                        _state.update { data ->
+                            data.copy(
+                                loadingMovies = true,
+                                errorVideo = null
+                            )
+                        }
+                    }
+                    is Resource.Success -> {
+                        delay(1000)
+                        _state.update { data ->
+                            data.copy(
+                                loadingMovies = false,
+                                errorVideo = null,
+                                resultVideo = it.data?.results as List<VideoModel>
+                            )
+                        }
+
+                    }
+                }
+            }.launchIn(this)
+        }
     }
      fun getTvVideos() {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            repo.getTVVideo(
-//                _state.value.itemId ?: 1
-//            ).onEach {
-//                when (it) {
-//                    is Resource.DataError -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                loadingMovies = false,
-//                                errorVideo = it.errorMessage
-//                            )
-//                        }
-//
-//                    }
-//                    is Resource.Loading -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                loadingMovies = true,
-//                                errorVideo = null
-//                            )
-//                        }
-//                    }
-//                    is Resource.Success -> {
-//                        delay(1000)
-//                        _state.update { data ->
-//                            data.copy(
-//                                loadingMovies = false,
-//                                errorVideo = if ((it.data?.results as List<VideoModel>).isEmpty()) Constant.NO_VIDEO else null,
-//                                resultVideo = it.data.results as List<VideoModel>
-//                            )
-//                        }
-//
-//                    }
-//                }
-//            }.launchIn(this)
-//        }
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.getTVVideo(
+                _state.value.itemId ?: 1
+            ).onEach {
+                when (it) {
+                    is Resource.DataError -> {
+                        _state.update { data ->
+                            data.copy(
+                                loadingMovies = false,
+                                errorVideo = it.errorMessage
+                            )
+                        }
+
+                    }
+                    is Resource.Loading -> {
+                        _state.update { data ->
+                            data.copy(
+                                loadingMovies = true,
+                                errorVideo = null
+                            )
+                        }
+                    }
+                    is Resource.Success -> {
+                        delay(1000)
+                        _state.update { data ->
+                            data.copy(
+                                loadingMovies = false,
+                                errorVideo = if ((it.data?.results as List<VideoModel>).isEmpty()) Constant.NO_VIDEO else null,
+                                resultVideo = it.data.results as List<VideoModel>
+                            )
+                        }
+
+                    }
+                }
+            }.launchIn(this)
+        }
     }
     private fun getDetailTV() {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            repo.getDetailTV(
-//                _state.value.itemId ?: 1
-//            ).onEach {
-//                when (it) {
-//                    is Resource.DataError -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                initialLoading = false,
-//                                errorResult = it.errorMessage
-//                            )
-//                        }
-//
-//                    }
-//                    is Resource.Loading -> {
-//                        _state.update { data ->
-//                            data.copy(
-//                                initialLoading = true,
-//                                errorResult = null
-//                            )
-//                        }
-//                    }
-//                    is Resource.Success -> {
-//                        delay(1000)
-//                        _state.update { data ->
-//                            data.copy(
-//                                initialLoading = false,
-//                                errorResult = null,
-//                                result =  it.data
-//                            )
-//                        }
-//
-//                    }
-//                }
-//            }.launchIn(this)
-//        }
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.getDetailTV(
+                _state.value.itemId ?: 1
+            ).onEach {
+                when (it) {
+                    is Resource.DataError -> {
+                        _state.update { data ->
+                            data.copy(
+                                initialLoading = false,
+                                errorResult = it.errorMessage
+                            )
+                        }
+
+                    }
+                    is Resource.Loading -> {
+                        _state.update { data ->
+                            data.copy(
+                                initialLoading = true,
+                                errorResult = null
+                            )
+                        }
+                    }
+                    is Resource.Success -> {
+                        delay(1000)
+                        _state.update { data ->
+                            data.copy(
+                                initialLoading = false,
+                                errorResult = null,
+                                result =  it.data
+                            )
+                        }
+
+                    }
+                }
+            }.launchIn(this)
+        }
     }
 
 }

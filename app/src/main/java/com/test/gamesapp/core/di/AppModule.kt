@@ -1,11 +1,11 @@
-package com.test.gamesapp.core.data.di
+package com.test.gamesapp.core.di
 
 import android.content.Context
 import com.test.gamesapp.BuildConfig
 import com.test.gamesapp.core.data.remote.network.ApiService
-import com.test.gamesapp.utils.AdapterFactory
-import com.test.gamesapp.utils.Network
-import com.test.gamesapp.utils.NetworkConnectivity
+import com.test.gamesapp.core.utils.AdapterFactory
+import com.test.gamesapp.core.utils.Network
+import com.test.gamesapp.core.utils.NetworkConnectivity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -83,5 +83,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+
+
 
 }

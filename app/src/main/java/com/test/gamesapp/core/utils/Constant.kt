@@ -1,4 +1,4 @@
-package com.test.gamesapp.utils
+package com.test.gamesapp.core.utils
 
 object Constant {
 

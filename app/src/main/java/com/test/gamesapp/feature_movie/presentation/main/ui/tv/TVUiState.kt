@@ -1,7 +1,7 @@
 package com.test.gamesapp.feature_movie.presentation.main.ui.tv
 
-import com.test.gamesapp.feature_movie.data.model.GenreModel
-import com.test.gamesapp.feature_movie.data.model.TmDbModel
+import com.test.gamesapp.core.data.model.GenreModel
+import com.test.gamesapp.core.data.model.TmDbModel
 
 data class TVUiState(
     val genreLoading: Boolean = false,

@@ -1,4 +1,4 @@
-package com.test.gamesapp.utils
+package com.test.gamesapp.core.utils
 
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Deferred

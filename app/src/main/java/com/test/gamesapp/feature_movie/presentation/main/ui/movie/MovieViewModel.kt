@@ -1,13 +1,14 @@
 package com.test.gamesapp.feature_movie.presentation.main.ui.movie
 
 import androidx.lifecycle.viewModelScope
-import com.example.lawencontest.feature.feature_movie.repo.MovieParams
-import com.test.gamesapp.core.data.repository.MovieRepository
+import com.test.gamesapp.feature_movie.presentation.component.params.MovieParams
+import com.test.gamesapp.core.domain.repository.MovieRepository
 import com.test.gamesapp.core.base.BaseViewModel
-import com.test.gamesapp.feature_movie.data.model.GenreModel
-import com.test.gamesapp.feature_movie.data.model.TmDbModel
-import com.test.gamesapp.utils.Constant.DUMMY
-import com.test.gamesapp.utils.Resource
+import com.test.gamesapp.core.data.model.GenreModel
+import com.test.gamesapp.core.data.model.TmDbModel
+import com.test.gamesapp.core.utils.Constant.DUMMY
+import com.test.gamesapp.core.utils.Resource
+import com.test.gamesapp.core.utils.getDummyMovie
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

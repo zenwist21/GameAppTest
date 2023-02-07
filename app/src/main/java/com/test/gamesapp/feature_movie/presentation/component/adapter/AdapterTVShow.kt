@@ -7,20 +7,20 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lawencontest.core.utils.convertDateFormat
-import com.example.lawencontest.core.utils.loadImage
 import com.test.gamesapp.R
+import com.test.gamesapp.core.utils.Constant.IMAGE_URL
+import com.test.gamesapp.core.utils.Constant.NO_DATA_EXIST
+import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_ERROR
+import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_LOADING
+import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_LOADING_NEXT
+import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_SUCCESS
+import com.test.gamesapp.core.utils.convertDateFormat
+import com.test.gamesapp.core.utils.loadImage
+import com.test.gamesapp.core.data.model.TmDbModel
 import com.test.gamesapp.databinding.ItemListErrorBinding
 import com.test.gamesapp.databinding.ListItemLoadingNextBinding
 import com.test.gamesapp.databinding.ListItemMovieBinding
 import com.test.gamesapp.databinding.ListItemMovieSkeletonBinding
-import com.test.gamesapp.feature_movie.data.model.TmDbModel
-import com.test.gamesapp.utils.Constant.IMAGE_URL
-import com.test.gamesapp.utils.Constant.NO_DATA_EXIST
-import com.test.gamesapp.utils.Constant.RECYCLER_VIEW_ERROR
-import com.test.gamesapp.utils.Constant.RECYCLER_VIEW_LOADING
-import com.test.gamesapp.utils.Constant.RECYCLER_VIEW_LOADING_NEXT
-import com.test.gamesapp.utils.Constant.RECYCLER_VIEW_SUCCESS
 
 class AdapterTVShow :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

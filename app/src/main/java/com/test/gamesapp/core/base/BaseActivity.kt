@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.MutableLiveData
-import com.test.gamesapp.utils.Constant
-import com.example.lawencontest.core.utils.hideView
-import com.example.lawencontest.core.utils.showView
+import com.test.gamesapp.core.utils.Constant
+import com.test.gamesapp.core.utils.hideView
+import com.test.gamesapp.core.utils.showView
 
 abstract class BaseActivity : AppCompatActivity() {
 
