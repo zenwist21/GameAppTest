@@ -16,6 +16,7 @@ import com.test.gamesapp.core.utils.Constant.NO_DATA_EXIST
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_ERROR
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_LOADING
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_SUCCESS
+import com.test.gamesapp.core.utils.getDummyGenres
 
 class AdapterGenre :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -156,7 +157,7 @@ class AdapterGenre :
 
     fun setViewLoading(state: Boolean) {
         isLoading = state
-        if (isLoading) differ.submitList(emptyList())
+        if (isLoading) differ.submitList(getDummyGenres())
     }
 
     fun setViewError(state: Boolean, message: String? = "") {

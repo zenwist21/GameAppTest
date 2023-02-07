@@ -135,7 +135,7 @@ class MovieViewModel @Inject constructor(
         }
     }
 
-    private fun execute() = viewModelScope.launch(Dispatchers.IO) {
+     fun execute() = viewModelScope.launch(Dispatchers.IO) {
         val list = async { getMovieGenres() }
         val movie = async { getMoviesList() }
 

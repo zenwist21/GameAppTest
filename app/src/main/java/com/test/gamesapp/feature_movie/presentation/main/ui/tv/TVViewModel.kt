@@ -135,7 +135,7 @@ class TVViewModel @Inject constructor(
         }
     }
 
-    private fun execute() = viewModelScope.launch(Dispatchers.IO) {
+      fun execute() = viewModelScope.launch(Dispatchers.IO) {
         val list = async { getTvGenres() }
         val movie = async { getTvList() }
 

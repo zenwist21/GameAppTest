@@ -111,7 +111,6 @@ class MovieFragment : BaseFragment() {
 
     override fun observer() {
         requireActivity().collectLatestLifecycleFlow(viewModel.state) {
-            Log.e("TAG", "observer: ${it.totalPages}, ${it.currentPage}")
             if (it.genreLoading) {
                 adapterGenre.setViewLoading(true)
             } else {
@@ -120,7 +119,6 @@ class MovieFragment : BaseFragment() {
                 adapterGenre.differ.submitList(it.listGenre)
             }
             adapterMovie.setViewLoading(it.listLoading)
-//            binding.srlMain.isRefreshing = it.listLoading
             adapterMovie.changeIsLoading(it.loadingNextPage)
             it.listMovie.let { data ->
                 if (data.isEmpty()) {

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.test.gamesapp.R
+import com.test.gamesapp.core.data.model.TmDbModel
 import com.test.gamesapp.core.utils.Constant.IMAGE_URL
 import com.test.gamesapp.core.utils.Constant.NO_DATA_EXIST
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_ERROR
@@ -16,7 +17,6 @@ import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_LOADING_NEXT
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_SUCCESS
 import com.test.gamesapp.core.utils.convertDateFormat
 import com.test.gamesapp.core.utils.loadImage
-import com.test.gamesapp.core.data.model.TmDbModel
 import com.test.gamesapp.databinding.ItemListErrorBinding
 import com.test.gamesapp.databinding.ListItemLoadingNextBinding
 import com.test.gamesapp.databinding.ListItemMovieBinding
@@ -184,16 +184,15 @@ class AdapterMovie :
     override fun getItemCount(): Int = differ.currentList.size
 
 
-    @SuppressLint("NotifyDataSetChanged")
+
     fun setViewLoading(state: Boolean) {
         isLoading = state
-        notifyDataSetChanged()
+        notifyItemRangeChanged(0, differ.currentList.size)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun changeIsLoading(value: Boolean) {
         isNextLoading = value
-        notifyDataSetChanged()
+        notifyItemRangeChanged(0, differ.currentList.size)
     }
 
     fun setViewError(state: Boolean, message: String? = "") {

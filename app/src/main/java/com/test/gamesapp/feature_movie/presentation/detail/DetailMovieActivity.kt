@@ -83,9 +83,7 @@ class DetailMovieActivity : BaseActivity() {
     }
 
     override fun observe() {
-        collectLatestLifecycleFlow(viewModel.state.distinctUntilChanged { old, new ->
-            old.initialLoading == new.initialLoading
-        }) { state ->
+        collectLatestLifecycleFlow(viewModel.state) { state ->
             viewModel.currentLayout.observe(this@DetailMovieActivity) {
                 setBaseLayout(it)
             }
@@ -110,6 +108,7 @@ class DetailMovieActivity : BaseActivity() {
             return
         }
         if (!state.errorVideo.isNullOrEmpty()) {
+            binding.progressBar.hideView()
             Toast.makeText(
                 this@DetailMovieActivity,
                 if (state.errorVideo == Constant.NO_VIDEO) getString(R.string.no_video)
