@@ -59,7 +59,7 @@ class AdapterTVShow :
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind() {
             binding.apply {
-                shimmerFrame.startShimmerAnimation()
+                shimmerFrame.startShimmer()
             }
         }
     }

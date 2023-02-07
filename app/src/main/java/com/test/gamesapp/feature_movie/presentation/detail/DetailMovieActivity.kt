@@ -14,7 +14,6 @@ import com.test.gamesapp.feature_movie.presentation.component.adapter.AdapterGen
 import com.test.gamesapp.feature_movie.presentation.reviews.ReviewActivity
 import com.test.gamesapp.feature_movie.util.DetailType
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.distinctUntilChanged
 import javax.inject.Inject
 
 @AndroidEntryPoint

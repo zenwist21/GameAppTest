@@ -93,7 +93,7 @@ class TvFragment : BaseFragment() {
             }
             srlMain.setOnRefreshListener {
                 if (srlMain.isRefreshing) {
-                    viewModel.getTvList()
+                    viewModel.execute()
                     lifecycleScope.launch {
                         delay(1000)
                         srlMain.isRefreshing = false

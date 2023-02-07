@@ -2,25 +2,24 @@ package com.test.gamesapp.feature_movie.presentation.main.ui.movie
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.test.gamesapp.feature_movie.presentation.detail.DetailMovieActivity
-import com.test.gamesapp.feature_movie.presentation.component.adapter.AdapterMovie
 import com.test.gamesapp.core.base.BaseFragment
-import com.test.gamesapp.databinding.FragmentMovieBinding
 import com.test.gamesapp.core.data.model.GenreModel
 import com.test.gamesapp.core.data.model.TmDbModel
-import com.test.gamesapp.feature_movie.util.DetailType
 import com.test.gamesapp.core.utils.Constant
 import com.test.gamesapp.core.utils.Constant.NO_DATA_EXIST
 import com.test.gamesapp.core.utils.collectLatestLifecycleFlow
 import com.test.gamesapp.core.utils.hideView
 import com.test.gamesapp.core.utils.showView
+import com.test.gamesapp.databinding.FragmentMovieBinding
+import com.test.gamesapp.feature_movie.presentation.component.adapter.AdapterMovie
+import com.test.gamesapp.feature_movie.presentation.detail.DetailMovieActivity
+import com.test.gamesapp.feature_movie.util.DetailType
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -95,7 +94,7 @@ class MovieFragment : BaseFragment() {
             }
             srlMain.setOnRefreshListener {
                 if (srlMain.isRefreshing) {
-                    viewModel.getMoviesList()
+                    viewModel.execute()
                     lifecycleScope.launch {
                         delay(1000)
                         srlMain.isRefreshing = false

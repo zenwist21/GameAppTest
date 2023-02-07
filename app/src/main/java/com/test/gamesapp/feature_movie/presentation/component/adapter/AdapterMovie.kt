@@ -1,6 +1,5 @@
 package com.test.gamesapp.feature_movie.presentation.component.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat

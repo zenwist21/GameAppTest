@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.test.gamesapp.R
-import com.test.gamesapp.databinding.ItemListErrorBinding
-import com.test.gamesapp.databinding.ListItemGenreBinding
-import com.test.gamesapp.databinding.ListItemGenreSkeletonBinding
 import com.test.gamesapp.core.data.model.GenreModel
 import com.test.gamesapp.core.utils.Constant.NO_DATA_EXIST
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_ERROR
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_LOADING
 import com.test.gamesapp.core.utils.Constant.RECYCLER_VIEW_SUCCESS
 import com.test.gamesapp.core.utils.getDummyGenres
+import com.test.gamesapp.databinding.ItemListErrorBinding
+import com.test.gamesapp.databinding.ListItemGenreBinding
+import com.test.gamesapp.databinding.ListItemGenreSkeletonBinding
 
 class AdapterGenre :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
