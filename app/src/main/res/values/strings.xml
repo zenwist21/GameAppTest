@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GamesApp</string>
+    <string name="app_name">MovieApp</string>
     <string name="movie_app">Movie App</string>
     <string name="title_activity_main_menu_movie">MainMenuMovieActivity</string>
     <string name="title_home">Home</string>
